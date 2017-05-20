@@ -1,4 +1,8 @@
 Instructions:
+****************** UPDATE 05/20/2017 *************
+
+- THE forum part of the website will not work unless the database is implemented
+
 
 ****************** UPDATE 12/7/2016 *************
 
