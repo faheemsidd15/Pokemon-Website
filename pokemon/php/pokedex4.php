@@ -51,7 +51,7 @@
                 imgNumSeq = imgNumSeq.substr(imgNumSeq.length - 3);
                 // console.log(imgNumSeq);
 
-                $pokemonImg.attr('src', 'assets/images/' + imgNumSeq + '.png');
+                $pokemonImg.attr('src', '../assets/images/' + imgNumSeq + '.png');
                 $pokemonImg.attr('class', 'pokImg');
                 $pokemonImg.attr('id', i);
                 $pokemonImg.click(function (evt) {
