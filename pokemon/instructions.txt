@@ -1,0 +1,121 @@
+Instructions:
+
+****************** UPDATE 12/7/2016 *************
+
+-When you first click on the Website, you are prompted with the welcome page, enjoy the Pokemon nostalgia
+
+- Click on the Spinning pokeball and you will enter the website
+
+- What your seeing at this point is the PokeDex, Which is One of my services. 
+
+- Using an open source Pokemon API, I am able to call 720 Pokemon with all their information styled to the way I want
+
+-  The PokeDex is categorized by the generations/ leagues.
+
+- You will be able to view the PokeDex without logging in but as soon as you try to: see the Members, Create a Topic, or reply to a topic; you will be prompted to log in.
+
+- At this point, if you have an account, please log in or if not create a new account (the passwords are encrypted so I would not know your password).
+
+- If you are signing in, the username must be between 5 and 25 characters, the passwords must match, the password should be more than 6 characters, and you have to have a "@" in the email
+
+- After you have created an account, it will display on the top the username that you used to create the account
+
+- I could have redirected to the login page but wanted to display to the user that the user was created, furthermore the Login link is also created.
+
+- Once logged in, the PokeForum will be displayed.
+
+
+- Click on any category, each one has a radio button that can be clicked to choose the category
+
+- Once in any category, the topics are displayed and I added "back to category button" to help the user back to the categories page 
+
+- The topics are displayed according to the category choosen, this is done by value 1,2,3 in the code
+
+- The topics rows has links that can be clicked, it also displays the user that created it and the date it was created
+
+- Clicking on the topic, will then go into the posts for that topic, and it also displays the user and the date the user posted, on the bottom you can reply to the topic, and the pages automatically refreshes
+
+- If you click on the Members page you will be able to see all the registered users.
+
+- The info being diplayed is the users name, email, profile pic. and the pokemon they have saved. By default the users only have pokeballs for pokemon and a spinning pokeball as the default pic
+
+- When you go into account settings, there you can change your password and change your profile picture
+
+- Also in account settings, you can and or change Pokemon.
+
+- The way to do this is click the "add/change pokemon" button and it will display six text fields
+
+- you will only be allowed to put 3 digits and value less than 720 in each field, there are placeholders that can initially help you choose your first pokemon
+
+- they will refresh instantly and you can see what you chose.
+
+ - Then in members you can see others people's pokemon 
+ 
+ - You can see yours in your Profile by hitting "Welcome ..."
+ 
+ - I would like to add more funcionality like have gym battles, leveling your pokemon up
+ 
+ - There is so much I can add to this website if I have more time to work on it
+
+
+
+
+
+
+
+****************************** UPDATE ******** **********************
+
+You already have an account "demo1"
+
+lower volume just a little, enjoy intro
+
+
+CLICK spinning pokeball and it will take you to the Gen 1 pokemon that are being called from an API.
+
+The forum has more improvments, some bug fixes, Like before you couldnt see the "create topic" now you can
+and it will show a panel for you to create a topic
+
+The Navbar is working better
+
+You dont need to be logged in to view the pokemon, but you do to reply to topics
+
+Members can now be viewed under the Members link
+
+
+
+
+
+
+
+*********************************************************************
+
+You can create a username if you want
+
+but i have created a username: test
+					password: test123 
+					
+					if you want to use that.
+					
+					
+					
+					
+					Categories are radio buttons
+					
+					
+					
+					please ignore the My account and members that is for Final final touches
+                    
+                    
+                    
+        You can view the categories without signing in, once you get to the create topics you will need to sign in.
+        
+        
+        Also categories is the home page for now, so this has a full sign up and login and a functional forum the way I wanted it set up :) 
+        
+        This will be integrated with my final website and service 
+					
+					
+					
+					
+					
+				

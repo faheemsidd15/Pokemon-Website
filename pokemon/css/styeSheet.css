@@ -1,0 +1,71 @@
+/*This is the Video for home page*/
+
+.backgroundWrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#videoBG {
+    transition: 1s opacity;
+}
+
+
+/* End of Backgroud Video*/
+
+
+/*Main Logo****************************
+
+.pokeLogo2{
+    display:block;
+    max-width: 300px;
+    margin: 0 auto;
+    width: 90%;
+    float:right;
+}*/
+
+
+/*Two Logo images together on second page*******************/
+
+#twoImages {
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+#vidpause {
+    float: right;
+}
+
+.title-container {
+color: white;
+    padding-top: 50px;
+}
+
+
+.enter{
+    background-color: aliceblue;
+    width: 250px;
+    
+   font-size: 55px;
+    border-style: solid;
+    border-radius: 5000px;
+    border-color: red;
+    margin: 50px;
+    text-decoration: none;
+    z-index: 500;
+  
+    
+}
+
+
+
+a:hover {
+    color: #F09649;
+}

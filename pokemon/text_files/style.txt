@@ -1,0 +1,71 @@
+.attributes {
+
+    display:block;
+    font-size: 25px;
+    color: black;
+    background-color: lightcoral;
+    padding-left: 1em;
+    border: solid;
+
+    border-width: 10px;
+    border-color: aliceblue;
+
+
+}
+
+
+
+
+#team1 {
+    max-width: 300px;
+    width: 90%;
+}
+
+#team2 {
+    max-width: 300px;
+    width: 90%;
+}
+
+#team3 {
+    max-width: 300px;
+    width: 90%;
+}
+.pokImg {
+    max-width: 85px;
+    max-height: 85px;
+    background-color:white;
+    border-radius: 40px;
+    border-right: solid;
+    border-right-width: medium;
+    border-left: solid;
+    border-left-color:aliceblue;
+    border-left width: 30px;
+
+
+
+}
+
+
+To make them in the middle
+
+/*#pokLogo2 {
+    display:block;
+    max-width: 200px;
+    margin: 0 auto;
+    width: 90%;    
+}
+
+#pokeball {
+     display:block;
+    max-width: 150px;
+    margin: 0 auto;
+    width: 90%;
+
+}*/
+
+#pikachu {
+
+    margin-left: 8em;
+}
+
+

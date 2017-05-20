@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HW 2 - Ostap Lernatovych - Image search Flickr</title>
+        <link rel="stylesheet" href="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" />
+        <script src="assets/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/Bootstrap.min.css">
+        <link rel="stylesheet" href='css/jquery.mobile.icons.min.css'>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width"/>
+        <script>
+        function clearImages(x){ //this function clears the image area
+        if(x==1){ // Checkin on what page the search is made
+        $('#imageResult').html("<h2>Search something else</h2>");}
+        else{
+        $('#imageResult2').html("<h2>Search something else</h2>");}  
+        }
+
+        function makeImgCircle(){ //making images round
+        $("img").addClass("img-circle");
+        }
+        function makeImgGray(){ // making images black/white
+        $("img").addClass("img-gray")
+        }
+
+        function searchFlickr(x){ 
+        $('#imageResult').html("");//Clearing Image container before Any searches are made
+        var pageNumber = x;
+   
+        var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+        if(x==1){ //Singe it's a single-page arh. this is needed to get user input from a right "page"
+        var userSearchRequest = $('#userSearchInput').val();
+        }
+        else{
+        var userSearchRequest = $('#userSearchInput2').val();
+        }
+        
+        $.getJSON( flickerAPI, {
+        tags: userSearchRequest,
+        tagmode: "any",
+        format: "json"
+        })
+        
+        .done(function( data ) {
+        $.each( data.items, function( i, item ) {
+        if(x==1){$( "<img>" ).attr( "src", item.media.m ).appendTo( "#imageResult" );}
+        else{$( "<img>" ).attr( "src", item.media.m ).appendTo( "#imageResult2" );}
+        //I made this becouse when I would go on the mobile the secound screen would show 20 items and it would be hard to shroll down, so I reduced it to 10 items
+        if(x==1){ 
+        if ( i === 20 ) {
+        return false;
+        }
+        }
+       
+        if(x==2){
+        if ( i === 10 ) {
+        return false;
+        }
+        }
+       
+
+
+
+        });
+        })
+        }
+        </script>
+    </head>
+    <body>
+        <section id="gridLayout" data-role="page">
+            <div data-role="header">
+                <h1>Flickr Image Search</h1>
+            </div>
+            <div class="ui-content" role="main">
+                <p>Let's search for some images...</p>
+                <p><a href="#fullwidthlayout">View Full Width Layout</a></p>
+            </div>
+            <div id="imageResult"></div>
+            <input type="text" id="userSearchInput" placeholder="Search something: Pizza,Cat,Dogs etc"></input>
+            <input type="button" id="btnSearch" value="Search" onclick="searchFlickr(1);" />
+            <input type="button" id="btnClear" value="Clear Images" onclick="clearImages(1);" />
+            <div data-role="footer">
+                <h2>Copyright 2016 INFSCI 1073 - Ostap Lernatovych</h2>
+            </div>
+        </section>
+        <!-- Diffrent page-->
+        <section id="fullwidthlayout" data-role="page">
+            <div data-role="header">
+                <h1>Full Width Image Layout</h1>
+            </div>
+            <div class="ui-content" role="main">
+                <p><a href="#gridLayout">Go back to Simple Search (Grid Layout)</a></p>
+            </div>
+            <div id="imageResult2" class="fullwidth"></div>
+            <input type="text" id="userSearchInput2" placeholder="Search something: Pizza,Cat,Dogs etc"></input>
+            <input type="button" id="btnSearch" value="Search" onclick="searchFlickr(2);" />
+            <input type="button" id="btnClear" value="Clear Images" onclick="clearImages(2);" />
+            <br><h2>Some effects</h2>
+            <input type="button" id="btnCircleImg" value="Make Images Round" onclick="makeImgCircle()">
+            <input type="button" id="btnGray" value="Make Images Gray" onclick="makeImgGray()">
+            <div data-role="footer">
+                <h2>Copyright 2016 INFSCI 1073 - Ostap Lernatovych</h2>
+            </div>
+        </section>
+    </body>
+</html>
