@@ -106,13 +106,13 @@
 				$userName = $row['userName'];
 				$id = $row['id'];
 				$date = $row['date'];
-				$profile_pic = $row['profile_pic'];
-				$pokemon1 = $row['pokemon1'];
-				$pokemon2 = $row['pokemon2'];
-				$pokemon3 = $row['pokemon3'];
-				$pokemon4 = $row['pokemon4'];
-				$pokemon5 = $row['pokemon5'];
-				$pokemon6 = $row['pokemon6'];
+				$profile_pic = '../' . $row['profile_pic'];
+				$pokemon1 = '../' . $row['pokemon1'];
+				$pokemon2 = '../' . $row['pokemon2'];
+				$pokemon3 = '../' . $row['pokemon3'];
+				$pokemon4 = '../' . $row['pokemon4'];
+				$pokemon5 = '../' . $row['pokemon5'];
+				$pokemon6 = '../' . $row['pokemon6'];
 			}
 			?>
 
@@ -138,12 +138,12 @@
 				</div>
 				
 				<div id="pokemon_id">
-					| Pokemon 1 ID #<b><?php echo substr($pokemon1, 14 ,-4); ?></b>	
-					| Pokemon 2 ID #<b><?php echo substr($pokemon2, 14 ,-4); ?></b>
-					| Pokemon 3 ID #<b><?php echo substr($pokemon3, 14 ,-4); ?></b>
-					| Pokemon 4 ID #<b><?php echo substr($pokemon4, 14 ,-4); ?></b>
-					| Pokemon 5 ID #<b><?php echo substr($pokemon5, 14 ,-4); ?></b>
-					| Pokemon 6 ID #<b><?php echo substr($pokemon6, 14 ,-4); ?></b>
+					| Pokemon 1 ID #<b><?php echo substr($pokemon1, 17 ,-4); ?></b>	
+					| Pokemon 2 ID #<b><?php echo substr($pokemon2, 17 ,-4); ?></b>
+					| Pokemon 3 ID #<b><?php echo substr($pokemon3, 17 ,-4); ?></b>
+					| Pokemon 4 ID #<b><?php echo substr($pokemon4, 17 ,-4); ?></b>
+					| Pokemon 5 ID #<b><?php echo substr($pokemon5, 17 ,-4); ?></b>
+					| Pokemon 6 ID #<b><?php echo substr($pokemon6, 17 ,-4); ?></b>
 				</div>
 
 				<br />
@@ -197,8 +197,9 @@
 			$pokemon4 = @$_POST['pokemon4'];
 			$pokemon5 = @$_POST['pokemon5'];
 			$pokemon6 = @$_POST['pokemon6'];
+            $fileUp = "../";
 
-			$combined = $beg . $pokemon1 . $end;
+			$combined = $beg .  $pokemon1 . $end;
 			$combined2 = $beg . $pokemon2 . $end;
 			$combined3 = $beg . $pokemon3 . $end;
 			$combined4 = $beg . $pokemon4 . $end;

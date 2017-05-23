@@ -89,12 +89,12 @@
             $.getJSON(serviceUrl, function (data) {
                 console.log(data);
 
-                $img2 = $("<img width='50px'>");
+                $img2 = $("<img width='65px' height='65px'>");
 				$img2.attr({"src": data.sprites.front_default});
 				
 				$("#history").append($img2);
 				
-                $img = $("<img width='140px'>");
+                $img = $("<img width='300px'>");
                 $img.attr({"src": data.sprites.front_default});
                 //$("#spr").append($img);  ***** VERY IMPORTANT DO NOT DELETE THIS WILL SHOW ALL THE ONES CLICKED
                
