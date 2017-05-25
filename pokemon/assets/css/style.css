@@ -2,13 +2,14 @@
 
     display:block;
     font-size: 25px;
-    color: black;
-    background-color: lightcoral;
+    color: white;
+    background-color: black;
     padding-left: 1em;
     border: solid;
+    
 
-    border-width: 10px;
-    border-color: aliceblue;
+    border-width: 5px;
+    border-color: blue;
 
 
 }

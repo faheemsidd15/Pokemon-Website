@@ -126,7 +126,7 @@
 			<div class="wrapper">
 
 
-				<?php echo "<img src='$profile_pic' width= '100' height= '100'>"; ?> <br />
+				<?php echo "<img src='".@$profile_pic."' width= '100' height= '100'>"; ?> <br />
 
 				<div id="pokemonImages" class="pokemonImages">
 					<?php echo "<img src='$pokemon1' width= '130' height= '120'>"; ?>
@@ -143,7 +143,7 @@
 					| Pokemon 3 ID #<b><?php echo substr($pokemon3, 17 ,-4); ?></b>
 					| Pokemon 4 ID #<b><?php echo substr($pokemon4, 17 ,-4); ?></b>
 					| Pokemon 5 ID #<b><?php echo substr($pokemon5, 17 ,-4); ?></b>
-					| Pokemon 6 ID #<b><?php echo substr($pokemon6, 17 ,-4); ?></b>
+					| Pokemon 6 ID #<b><?php echo substr($pokemon6, 17  ,-4); ?></b>
 				</div>
 
 				<br />

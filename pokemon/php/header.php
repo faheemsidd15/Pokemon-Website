@@ -242,7 +242,7 @@
 								$profile_id = $row['id'];
 							}
 							
-							echo "<li class='lead'><a href='profile.php?id=$profile_id'>";
+							echo "<li class='lead'><a href='profile.php?id=".@$profile_id . "'>";
 							echo "Welcome "  . @$_SESSION['userName'] . "</a></li>";
 
 
