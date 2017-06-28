@@ -211,8 +211,8 @@ THIS IS WHERE THE CONTENT OF THE HTML WILL GO
 			</div>
 
 			<div class="attributes" id="pokemonAttr">
-				<div id="id"></div>
-				<div id="name"></div>
+                <h2 style="color:rgb(0, 179, 236)"><div id="id"></div></h2>
+                <h2 style="color:rgb(255,255,0)"><div id="name"></div></h2>
 				<div id="type1"></div>
 				<div id="type2"></div>
 				<div id="baseExperience"></div>
