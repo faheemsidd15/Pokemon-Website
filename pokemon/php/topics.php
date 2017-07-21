@@ -3,65 +3,57 @@
 
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>| Topics |</title>
-		<!-- Importing Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<style>
+<head>
+    <meta charset="UTF-8">
+    <title>| Topics |</title><meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Importing Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        @import "bourbon";
+        body {
+            background: #eee !important;
+        }
+        
+        .wrapper {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .form-signin {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            .form-signin-heading,
+            .checkbox {
+                margin-bottom: 30px;
+            }
+            .checkbox {
+                font-weight: normal;
+            }
+            .form-control {
+                position: relative;
+                font-size: 16px;
+                height: auto;
+                padding: 10px;
+                &:focus {
+                    z-index: 2;
+                }
+            }
+            input[type="text"] {
+                margin-bottom: -1px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    </style>
+</head>
 
-
-
-			@import "bourbon";
-			body {
-				background: #eee !important;
-			}
-
-			.wrapper {
-				margin-top: 80px;
-				margin-bottom: 80px;
-			}
-
-			.form-signin {
-				max-width: 380px;
-				padding: 15px 35px 45px;
-				margin: 0 auto;
-				background-color: #fff;
-				border: 1px solid rgba(0, 0, 0, 0.1);
-				.form-signin-heading,
-				.checkbox {
-					margin-bottom: 30px;
-				}
-				.checkbox {
-					font-weight: normal;
-				}
-				.form-control {
-					position: relative;
-					font-size: 16px;
-					height: auto;
-					padding: 10px;
-					&:focus {
-						z-index: 2;
-					}
-				}
-				input[type="text"] {
-					margin-bottom: -1px;
-					border-bottom-left-radius: 0;
-					border-bottom-right-radius: 0;
-				}
-
-
-			}
-
-
-
-		</style>
-	</head>
-
-	<body>
-		<?php
+<body>
+    <?php
 		//************************************* PHP***************************
 		// put your code here
 		// Start the session and always require the connect.php
@@ -77,7 +69,7 @@
 
 
 
-		<?php
+        <?php
 //include the header.php here
 		include("header.php");
 
@@ -99,50 +91,51 @@
 		?>
 
 
-		<!--
+            <!--
 THIS IS WHERE THE CONTENT OF THE HTML WILL GO
 		-->
 
 
 
 
-		<?php echo"<table class='table table-striped'"; ?>
+            <?php echo"<table class='table table-striped'"; ?>
 
 
-	<thead class="thead-inverse">
-		<tr>
+            <thead class="thead-inverse">
+                <tr>
 
-			<th><span>ID</span></th>
-
-
-			<th><center>Name</center></th>
+                    <th><span>ID</span></th>
 
 
-
-		<th>Creator</th>
-
-
-		<!--<th>Category</th> -->
-		
-
-
-		<th>Date</th>
-
-
-			</tr>
-</thead>
+                    <th>
+                        <center>Name</center>
+                    </th>
 
 
 
+                    <th>Creator</th>
 
 
+                    <!--<th>Category</th> -->
+
+
+
+                    <th>Date</th>
+
+
+                </tr>
+            </thead>
 
 
 
 
 
 
-<?php
+
+
+
+
+            <?php
 //echo "<tr><td></td></tr>";
 // changing the styles here to do something related to the categories
 
@@ -185,17 +178,17 @@ if ($_SESSION['cat_id'] == 3) {
 
 ?>
 
-<center>
-	<a href="topics.php?action=topics"><button class="btn btn-lg btn-secondary ">Create a topic</button></a>
+                <center>
+                    <a href="topics.php?action=topics"><button class="btn btn-lg btn-secondary ">Create a topic</button></a>
 
-</center>
-
-
+                </center>
 
 
 
 
-<?php
+
+
+                <?php
 
 
 $check = mysql_query("SELECT * FROM topics where fk_cat_id = '{$_SESSION['cat_id']}' ");
@@ -227,7 +220,7 @@ echo "</table>";
 
 
 
-<!--		<form action="topics.php" method="POST">
+                    <!--		<form action="topics.php" method="POST">
 
 <center>
 
@@ -239,12 +232,12 @@ echo "</table>";
 
 
 
-<?php
+                    <?php
 //echo "<tr><td></td></tr>";
 echo "</table>";
 ?>
 
-<?php
+                        <?php
 
 if (@$_GET['action'] == "topics") {
 
@@ -269,25 +262,25 @@ if (@$_GET['action'] == "topics") {
 ?>
 
 
-	<form class="form-signin" action="post_topic.php" method="POST">
-		<h2 class="form-signin-heading">Topic Name:</h2>
+                            <form class="form-signin" action="post_topic.php" method="POST">
+                                <h2 class="form-signin-heading">Topic Name:</h2>
 
 
-		<input type="text" class="form-control" name="topic_name" placeholder="Write the topic name" required="" autofocus="" />
-		<br />
+                                <input type="text" class="form-control" name="topic_name" placeholder="Write the topic name" required="" autofocus="" />
+                                <br />
 
 
 
-		<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="post">Post Topic</button>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="post">Post Topic</button>
 
 
-	</form>
-<?php
+                            </form>
+                            <?php
 
 }
 ?>
 
-	<?php
+                            <?php
 	//**************************************************************************
 	////// Ths is the crucial part
 
