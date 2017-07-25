@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Importing Bootstrap -->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
 
-		<link rel="shortcut icon" href="images/favicon.ico">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Importing Bootstrap -->
 
-
-
-		<link rel="stylesheet" href="../css/styeSheet.css" />
-		<link rel="stylesheet" href="../assets/css/style.css" />
-		<link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" href="../assets/css/Bootstrap.min.css" />
-        <link rel="stylesheet" href="../assets/css/bootstrap.css" />
-		<script src="../assets/jquery-1.11.0.js" type="text/javascript"></script>
-		<script src="../assets/bootstrap.min.js" type="text/javascript"></script>
-		<link rel="styleSheet" href="../assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" />
-<!--		<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js" type="text/javascript"></script>-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
+    <link rel="stylesheet" href="../css/styeSheet.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../assets/css/Bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <script src="../assets/jquery-1.11.0.js" type="text/javascript"></script>
+    <script src="../assets/bootstrap.min.js" type="text/javascript"></script>
+    <link rel="styleSheet" href="../assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" />
+    <!--		<script src="assets/jquery.mobile-1.4.2/jquery.mobile-1.4.2.js" type="text/javascript"></script>-->
 
-		<script>
-            function getPokemonData(name) {
+
+
+
+    <script>
+        function getPokemonData(name) {
             var serviceUrl =
-                    "http://pokeapi.co/api/v2/pokemon/" + name;
+                "http://pokeapi.co/api/v2/pokemon/" + name;
 
-            $.getJSON(serviceUrl, function (data) {
+            $.getJSON(serviceUrl, function(data) {
                 console.log(data);
 
                 /*This is for all the attributes*/
@@ -41,19 +42,23 @@
                 //$("#spr").html("Sprite:    " + data.sprites);
 
                 //$("#spr").html("img link: " + data.sprites.front_default);
-				
-				$img2 = $("<img width='50px'>");
-				$img2.attr({"src": data.sprites.front_default});
-				
-				$("#history").append($img2);
-				
+
+                $img2 = $("<img width='50px'>");
+                $img2.attr({
+                    "src": data.sprites.front_default
+                });
+
+                $("#history").append($img2);
+
                 $img = $("<img width='140px'>");
-                $img.attr({"src": data.sprites.front_default});
+                $img.attr({
+                    "src": data.sprites.front_default
+                });
                 //$("#spr").append($img);  ***** VERY IMPORTANT DO NOT DELETE THIS WILL SHOW ALL THE ONES CLICKED
-               
-			   
-			   
-				$("#spr").html($img);
+
+
+
+                $("#spr").html($img);
                 $("#id").html("ID Number:    " + data.id);
                 $("#name").html("Name:    " + data.name);
                 $("#baseExperience").html("Base Experience:  " + data.base_experience);
@@ -83,60 +88,57 @@
             });
 
         }
-            
-            
-            
-            
-            
-// This is for the rotation Animation
-            
-            var looper = null;
-            var degrees = 0;
 
-            function rotateAnimation(el, speed) {
-                var elem = document.getElementById(el);
-                if (navigator.userAgent.match("Chrome")) {
-                    elem.style.WebkitTransform = "rotate(" + degrees + "deg)";
-                } else if (navigator.userAgent.match("Firefox")) {
-                    elem.style.MozTransform = "rotate(" + degrees + "deg)";
-                } else if (navigator.userAgent.match("MSIE")) {
-                    elem.style.msTransform = "rotate(" + degrees + "deg)";
-                } else if (navigator.userAgent.match("Opera")) {
-                    elem.style.OTransform = "rotate(" + degrees + "deg)";
-                } else {
-                    elem.style.transform = "rotate(" + degrees + "deg)";
-                }
-                if (looper != null) {
-                    clearInterval(looper);
-                    looper = null;
-                    // elem.style.transform = "rotate(0deg)";
-                    // rotate back to zero
-                }
 
-                looper = setTimeout('rotateAnimation(\'' + el + '\',' + speed + ')', speed);
-                degrees++;
-                if (degrees > 359) {
-                    degrees = 1;
-                }
 
+
+
+        // This is for the rotation Animation
+
+        var looper = null;
+        var degrees = 0;
+
+        function rotateAnimation(el, speed) {
+            var elem = document.getElementById(el);
+            if (navigator.userAgent.match("Chrome")) {
+                elem.style.WebkitTransform = "rotate(" + degrees + "deg)";
+            } else if (navigator.userAgent.match("Firefox")) {
+                elem.style.MozTransform = "rotate(" + degrees + "deg)";
+            } else if (navigator.userAgent.match("MSIE")) {
+                elem.style.msTransform = "rotate(" + degrees + "deg)";
+            } else if (navigator.userAgent.match("Opera")) {
+                elem.style.OTransform = "rotate(" + degrees + "deg)";
+            } else {
+                elem.style.transform = "rotate(" + degrees + "deg)";
+            }
+            if (looper != null) {
+                clearInterval(looper);
+                looper = null;
+                // elem.style.transform = "rotate(0deg)";
+                // rotate back to zero
             }
 
+            looper = setTimeout('rotateAnimation(\'' + el + '\',' + speed + ')', speed);
+            degrees++;
+            if (degrees > 359) {
+                degrees = 1;
+            }
+
+        }
+    </script>
 
 
 
-		</script>	
 
 
 
 
 
 
+</head>
 
-
-
-    </head>
-    <body>
-		<!--		<nav class="navbar navbar-inverse">
+<body>
+    <!--		<nav class="navbar navbar-inverse">
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<a class="navbar-brand" href="#">WebSiteName</a>
@@ -152,86 +154,94 @@
 						</ul>
 					</div>
 				</nav>-->
-		<?php
+    <?php
 		// put your code here
 		?>
 
-		<div data-role="header">
+        <div data-role="header">
 
 
 
 
 
-			<!--This is the main logo-->
+            <!--This is the main logo-->
 
-			<!--end of main logo-->
-
-
-			<!----------Spinning Pokeball-->
+            <!--end of main logo-->
 
 
-
-
-			<!---------------------End of Spinning Pokeball-->
-
-
-			<nav class="navbar navbar-inverse">
-
-
-				<div class="container-fluid">
+            <!----------Spinning Pokeball-->
 
 
 
-					<div class="navbar-header">
-						<a href="../index.html">
-							<img name="PokeMonLogo2" id="pokLogo2" src="../assets/images/200px-English_Pok%C3%A9mon_logo.png" class="img-responsive	" alt="Pokemon Logo" width="120"></a>
-						<script>
+
+            <!---------------------End of Spinning Pokeball-->
+
+
+            <nav class="navbar navbar-inverse">
+
+
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+
+                    </div>
+
+                    <div class="navbar-header">
+                        <a href="../index.html">
+                            <img name="PokeMonLogo2" id="pokLogo2" src="../assets/images/200px-English_Pok%C3%A9mon_logo.png" class="img-responsive	" alt="Pokemon Logo" width="120"></a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>                        
+						</button>
+                        <script>
                             //rotateAnimation("pokeLogo2",1)
-						</script>
+                        </script>
 
 
 
-						<a href="../index.html">
-							<img name="Pokeball" id="pokeball" src="../assets/images/pokeball.png" class="img-responsive" alt="Pokemon Logo" width=87></a>
-						<script>
+                        <a href="../index.html">
+                            <img name="Pokeball" id="pokeball" src="../assets/images/pokeball.png" class="img-responsive" alt="Pokemon Logo" width=87></a>
+                        <script>
                             rotateAnimation("pokeball", 3);
-						</script>
+                        </script>
 
 
-					</div>
+                    </div>
 
-					<ul class="nav navbar-nav">
-						<!--<li class="active"><a href="#">| HOME |</a></li> -->
-
-
-						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="pokedex1.php">PokeDex
-							</a><span class="caret"></span>   
-							<ul class="dropdown-menu">
-								<li><a href="pokedex1.php">Gen 1/ Kanto League</a></li>
-								<li><a href="pokedex2.php">Gen 2/ Johto League</a></li>
-								<li><a href="pokedex3.php">Gen 3/ Hoenn League</a></li>
-								<li><a href="pokedex4.php">Gen 4/ Sinnoh League</a></li>
-								<li><a href="pokedex5.php">Gen 5/ Unova League</a></li>
-								<li><a href="pokedex6.php">Gen 6/ Kalos League</a></li>
-
-							</ul>
-						</li>
-
-						<li><a href="index.php">PokeForum</a></li>
+                    <div class="collapse navbar-collapse" id="header">
+                        <ul class="nav navbar-nav">
+                            <!--<li class="active"><a href="#">| HOME |</a></li> -->
 
 
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="pokedex1.php">PokeDex
+							</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="pokedex1.php">Gen 1/ Kanto League</a></li>
+                                    <li><a href="pokedex2.php">Gen 2/ Johto League</a></li>
+                                    <li><a href="pokedex3.php">Gen 3/ Hoenn League</a></li>
+                                    <li><a href="pokedex4.php">Gen 4/ Sinnoh League</a></li>
+                                    <li><a href="pokedex5.php">Gen 5/ Unova League</a></li>
+                                    <li><a href="pokedex6.php">Gen 6/ Kalos League</a></li>
 
-						<li><a href="members.php">PokeMembers</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="index.php">PokeForum</a></li>
 
 
 
+                            <li><a href="members.php">PokeMembers</a></li>
 
 
-					</ul>
 
-					<ul class="nav navbar-nav navbar-right">
-						<?php
+
+
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <?php
 						if (isset($_SESSION['userName'])) {
 							
 							$check = mysql_query("SELECT * FROM users WHERE userName = '{$_SESSION['userName']}'");
@@ -257,20 +267,28 @@
 						?>
 
 
-					</ul>
+                        </ul>
 
 
-				</div>
-
-			   <!-- <input type="text" id="txtSearch" value="" /> -------->
-                <table><th id="history"></th></table>	
 
 
-			</nav>
-
-		</div> <!-- End of header ----------------->
+                    </div>
 
 
-    </body>
+                </div>
+
+                <!-- <input type="text" id="txtSearch" value="" /> -------->
+                <table>
+                    <th id="history"></th>
+                </table>
+
+
+            </nav>
+
+        </div>
+        <!-- End of header ----------------->
+
+
+</body>
 
 </html>
